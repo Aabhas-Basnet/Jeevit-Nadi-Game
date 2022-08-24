@@ -65,6 +65,10 @@
    display:none;
 }
 
+#mobile{
+	display:none;
+}
+
 
 @media only screen and (max-width:1200px){
 
@@ -85,18 +89,18 @@
 
 
 #can{
- margin: 200px 50px;
+ margin: 200px 50px 100px;
 }
 
 .Game_button{
  width: 80%;
- margin:1% 10%;
+ margin:0% 10%;
  display: flex;
  flex-direction: column;
  align-items: center;
  justify-content: space-around;
  border: 2px solid #fff;
- background-color: #fff;
+ background-color: #A2E3FD;
 }
 
 .GButtons{
@@ -104,7 +108,13 @@
  font-size: 5em;
  padding: 20px;
  margin: 50 50px 50px;
- background-color: #fff;
+ background-color: #1DACE5;
+}
+
+.GButtons:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .Up,.Settings,.Down, .attack{
@@ -116,6 +126,12 @@
  font-size: 3em;
 }
 
+#mobile{
+	display:block;
+}
 
+#comp{
+  display:none;
+}
 
 }

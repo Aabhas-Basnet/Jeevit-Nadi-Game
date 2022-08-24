@@ -11,7 +11,7 @@
 
 <div class="Game_button">
  <div class="Up">
- <button class="GButtons" id="Up" onclick="Movement('Up')">↑</button>
+ <button class="GButtons" id="Up"  onclick="Movement('Up')">↑</button>
  </div>
  
  <div class="down">
@@ -55,6 +55,11 @@ var up = false;
 var down = false;
 var left = false;
 var right = false;
+
+var upm = false;
+var downm = false;
+var leftm = false;
+var rightm = false;
 
 var player;
 var HighestScore= null;
@@ -228,9 +233,14 @@ document.oncontextmenu = function(mouse) {
 	mouse.preventDefault(); 
 }
 
-Movement= function(x){  	
+Movement= function(x){   
   if (x=="Up"){
-    player.y -=25;
+    
+	upm = true;
+    downm = false;
+    leftm = false;
+    rightm = false;
+	
 	up = true;
 	down = false;
 	left = false;
@@ -238,7 +248,12 @@ Movement= function(x){
   }
   
   if (x=="Down"){
-    player.y +=25;
+  
+    upm = false;
+    downm = true;
+    leftm = false;
+    rightm = false;
+
     down = true;
 	up = false;
 	left = false;
@@ -246,7 +261,12 @@ Movement= function(x){
   }
   
   if (x=="Left"){
-    player.x -=25;
+	
+	upm = false;
+    downm = false;
+    leftm = true;
+    rightm = false;
+
     left = true;
 	up = false;
 	down = false;
@@ -254,7 +274,12 @@ Movement= function(x){
   }
   
    if (x=="Right"){
-    player.x +=25;
+	
+	upm = false;
+    downm = false;
+    leftm = false;
+    rightm = true;
+
 	right = true;
 	up = false;
 	down = false;
@@ -280,18 +305,9 @@ Movement= function(x){
   if (x=="Play"){
     location.reload();
   }
-  
-  if (x=="Up" || x=="Down" || x=="Left" || x=="Right" ){
-      player.MovingCounter+=1;
-    }
+
 }
 
-Reset = function(){
-  upM = false;
-  downM = false;
-  leftM = false;
-  rightM = false;
-}
 
 document.onkeydown = function(event){
    if (event.keyCode ===87){
@@ -347,6 +363,15 @@ updatingEntity=function(entity){
             player.y +=15;
 	    if (player.pressigUp)
             player.y -=15;
+			
+	    if (rightm == true)
+           player.x +=15;
+	    if (leftm == true)
+            player.x -=15;
+	    if (downm == true)
+            player.y +=15;
+	    if (upm == true)
+            player.y -=15;
 	
 	    if (player.x < player.width/2)
             player.x=player.width/2;			
@@ -360,6 +385,10 @@ updatingEntity=function(entity){
         if (player.pressigDown || player.pressigLeft || player.pressigRight || player.pressigUp ){
 		  player.MovingCounter+=1;
 		}
+		
+		if (rightm || leftm || downm || upm ){
+          player.MovingCounter+=1;
+        }
 			
 	} else {
 	    entity.x += entity.spdX;
@@ -474,7 +503,7 @@ update = function(){
     can.fillText('Waves: '+waveCount,300, 350);
 	HighestScore = checkHs();
 	can.fillText('Top Score : '+HighestScore,280,400)
-	can.fillText("Press Space to Play again ",220,600);
+	can.fillText("Press Space or Re-load to Play again ",150,600);
 	
 	if (replay==true){
 	   return;
@@ -551,9 +580,9 @@ update = function(){
 	can.fillText(player.hp,20,30);
 	can.drawImage(Img.hp,60,-5,40,45);
 	can.fillText("Score: " +score,280,30);
-	can.drawImage(Img.upgrade,410,0,35,35);
-	can.fillText(collisionCount,680,30);
-	can.drawImage(Img.p,700,0,45,40);
+	can.drawImage(Img.upgrade,430,0,35,35);
+	can.fillText(collisionCount,660,30);
+	can.drawImage(Img.p,690,0,45,40);
 }
 
 EndGame = function() {

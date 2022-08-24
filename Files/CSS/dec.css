@@ -65,7 +65,7 @@
    display:none;
 }
 
-#mobile{
+#mobile, #mobile1{
 	display:none;
 }
 
@@ -127,6 +127,12 @@
 }
 
 #mobile{
+	display:block;
+	padding-top: 10px;
+}
+
+
+#mobile1{
 	display:block;
 }
 

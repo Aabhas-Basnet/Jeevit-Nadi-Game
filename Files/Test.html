@@ -1,0 +1,66 @@
+ <meta name="viewport" content="user-scalable=no">
+<canvas id="can" width="650" height="800" style="border:1px solid #000000;" ></canvas>
+
+
+<div class="Game_button">
+ <div class="Up">
+ <button class="GButtons" id="Up" onclick="Movement('Up')">↑</button>
+ </div>
+ 
+ <div class="down">
+ <button class="GButtons" id="Left" onclick="Movement('Left')">←</button>
+  <button class="GButtons" id="Down" onclick="Movement('Down')">↓</button>
+ <button class="GButtons" id="Right" onclick="Movement('Right')">→</button>
+ </div>
+ 
+ <div class="Settings">
+ <button class="GButtons" id="Pause" onclick="Movement('Pause')">Pause</button>
+  <button class="GButtons" id="Play" onclick="Movement('Play')">Re-play</button>
+ </div>
+ 
+</div>
+
+
+<style>
+
+
+.Game_button{
+ display: none;
+ width: 80%;
+ margin: 10%;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-around;
+ border: 2px solid #000;
+}
+
+.GButtons{
+ padding:50px;
+ font-size: 5em;
+ padding: 20px;
+ margin: 50 50px 50px;
+}
+
+#Pause, #Play{
+ padding:10px;
+ font-size: 3em;
+}
+
+#can{
+ padding:100px;
+ margin: 100px 50px;
+}
+
+
+</style>
+
+<script>
+
+var can= document.getElementById("can").getContext("2d");
+
+Movement = function(x){
+  console.log(x);
+}
+
+
+</script>

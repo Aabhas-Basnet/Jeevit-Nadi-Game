@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700;1,800&family=Stylish&display=swap');
+
+*{
+ margin: 0;
+ padding:0;
+ font-family: 'Stylish', sans-serif;
+ background-color: #000;
+}
+
+.Bg{
+ width: 80%;
+ height: 100vh;
+ margin-left:10%;
+}
+
+.Bg img{
+ width: 40%;
+ height: 80%;
+ margin-left: 25%;
+ padding: 50px;
+}
+
+.button{
+    position: absolute;
+    background-color : blue;
+	border: 4px solid #000;
+	color:#fff;
+	text-align:center;
+	cursor:pointer;
+	border-radius: 20%;
+	padding:15px;
+	font-weight: bold;
+}
+
+.button:hover{
+  background-color:green;
+  border: 4px solid #fff;
+  padding: 20px;
+}
+
+#b1{
+	top: 18%;
+	left: 45.5%;
+	font-size:25px;
+}
+
+#b2{
+    position: absolute;
+	top:29%;
+	left: 45%;
+	font-size:20px;
+}
+
+#back{
+ top:3%;
+ left: 3%;
+ font-size: 25px;
+}
+
+#can{
+ margin: 50px 50px;
+}
+
+.Game_button{
+   display:none;
+}
+
+
+@media only screen and (max-width:1200px){
+
+.Bg img{
+ width: 100%;
+ padding:10px;
+ margin:15% 0 5%;
+}
+
+.button, .button1{
+ padding: 30px
+}
+
+#tutorial{
+	margin-top: 20%;
+	height: 60%;
+}
+
+
+#can{
+ margin: 200px 50px;
+}
+
+.Game_button{
+ width: 80%;
+ margin:1% 10%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-around;
+ border: 2px solid #fff;
+ background-color: #fff;
+}
+
+.GButtons{
+ padding:50px;
+ font-size: 5em;
+ padding: 20px;
+ margin: 50 50px 50px;
+ background-color: #fff;
+}
+
+.Up,.Settings,.Down, .attack{
+ background-color: #fff;
+}
+
+#Pause, #Play, #attack{
+ padding:10px;
+ font-size: 3em;
+}
+
+
+
+}

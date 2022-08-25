@@ -70,8 +70,8 @@ backgroundSound = new Audio("Audio/bgS.mp3");
 createPlayer =function(){
   player ={
     type:'player',
-    x:1300,
-    y:1200,
+    x:500,
+    y:500,
     spdX:15,
     spdY:15,
     name:"P",
@@ -536,9 +536,9 @@ update = function(){
 	}
     updateEntity(player);
 	can.fillText(player.hp,20,30);
-	can.drawImage(Img.hp,60,-5,40,45);
+	can.drawImage(Img.hp,80,-5,40,45);
 	can.fillText("Score: " +score,280,30);
-	can.drawImage(Img.upgrade,430,0,35,35);
+	can.drawImage(Img.upgrade,450,0,35,35);
 	can.fillText(collisionCount,660,30);
 	can.drawImage(Img.p,690,0,45,40);
 }
